@@ -1,0 +1,9 @@
+*.vcd
+*.fst
+*.log
+*.tmp
+*.swp
+*.o
+*.a
+*.so
+__pycache__/

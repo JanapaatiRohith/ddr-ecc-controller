@@ -1,0 +1,12 @@
+# Yosys synthesis script for the DUT only.
+read_verilog ../src/ecc_secded.v
+read_verilog ../src/ddr_controller.v
+hierarchy -check -top ddr_controller
+proc
+memory
+opt
+check
+stat
+synth -top ddr_controller
+stat
+write_verilog -noattr ddr_controller_synth.v
