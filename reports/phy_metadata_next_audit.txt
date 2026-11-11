@@ -1,0 +1,172 @@
+========== 1. SUBMODULE VERSIONS ==========
+ b1fab721655c5c4b1b08a083d3cd29f163af75d0 3rdparty/corrosion (v0.4.3-35-gb1fab72)
+ d344bbdd47788ed6a813e0bc5eb799295b00b074 3rdparty/fasm2netlist (heads/main)
+ c60730422e758ef1cebe7aeddf2dda31c996bf04 3rdparty/fasm2netlist/third_party/cadical (rel-3.0.1)
+ 52eb8108c5bdec04579160ae17225d66034bd723 3rdparty/googletest (release-1.8.0-3544-g52eb8108)
+ 8a3f5a09d87e382a5dc98f2d14caa54d7c35a367 himbaechel/uarch/xilinx/meta (remotes/origin/virtex7-support-2-g8a3f5a0)
+ ce154121819a04ec921a4a6f6850c28f33c81b6c tests (remotes/origin/catherine/move-tests)
+
+========== 2. TRACKED METADATA FILES ==========
+160000 8a3f5a09d87e382a5dc98f2d14caa54d7c35a367 0	himbaechel/uarch/xilinx/meta
+
+========== 3. PHY/FIFO C++ IMPLEMENTATION ==========
+himbaechel/uarch/xilinx/pins.cc:225:    invertible_pins[id_PHASER_IN_PHY].insert(id_RST);
+himbaechel/uarch/xilinx/pins.cc:227:    invertible_pins[id_PHASER_OUT_PHY].insert(id_RST);
+himbaechel/uarch/xilinx/pins.cc:228:    invertible_pins[id_PHASER_REF].insert(id_RST);
+himbaechel/uarch/xilinx/pins.cc:229:    invertible_pins[id_PHASER_REF].insert(id_PWRDWN);
+
+========== 4. ARTIX7 PHY SITE DATABASE SUMMARY ==========
+
+--- IN_FIFO ---
+DATABASE FILE MISSING
+
+--- OUT_FIFO ---
+DATABASE FILE MISSING
+
+--- PHASER_IN_PHY ---
+DATABASE FILE MISSING
+
+--- PHASER_OUT_PHY ---
+DATABASE FILE MISSING
+
+--- PHASER_REF ---
+DATABASE FILE MISSING
+
+--- PHY_CONTROL ---
+DATABASE FILE MISSING
+
+========== 5. ARTIX7 / KINTEX7 PHY WIRE INTENTS ==========
+
+--- artix7 ---
+5355:            "BRKH_CMT_PHASEREF0": 6,
+5356:            "BRKH_CMT_PHASEREF1": 6,
+5357:            "BRKH_CMT_PHASEREF_BELOW0": 6,
+5358:            "BRKH_CMT_PHASEREF_BELOW1": 6,
+26566:        "CMT_FIFO_L": {
+26567:            "CMT_FIFO_EE2A0_0": 1,
+26568:            "CMT_FIFO_EE2A0_1": 1,
+26569:            "CMT_FIFO_EE2A0_10": 1,
+26570:            "CMT_FIFO_EE2A0_11": 1,
+26571:            "CMT_FIFO_EE2A0_2": 1,
+26572:            "CMT_FIFO_EE2A0_3": 1,
+26573:            "CMT_FIFO_EE2A0_4": 1,
+26574:            "CMT_FIFO_EE2A0_5": 1,
+26575:            "CMT_FIFO_EE2A0_6": 1,
+26576:            "CMT_FIFO_EE2A0_7": 1,
+26577:            "CMT_FIFO_EE2A0_8": 1,
+26578:            "CMT_FIFO_EE2A0_9": 1,
+26579:            "CMT_FIFO_EE2A1_0": 1,
+26580:            "CMT_FIFO_EE2A1_1": 1,
+26581:            "CMT_FIFO_EE2A1_10": 1,
+26582:            "CMT_FIFO_EE2A1_11": 1,
+26583:            "CMT_FIFO_EE2A1_2": 1,
+26584:            "CMT_FIFO_EE2A1_3": 1,
+26585:            "CMT_FIFO_EE2A1_4": 1,
+26586:            "CMT_FIFO_EE2A1_5": 1,
+26587:            "CMT_FIFO_EE2A1_6": 1,
+26588:            "CMT_FIFO_EE2A1_7": 1,
+26589:            "CMT_FIFO_EE2A1_8": 1,
+26590:            "CMT_FIFO_EE2A1_9": 1,
+26591:            "CMT_FIFO_EE2A2_0": 1,
+26592:            "CMT_FIFO_EE2A2_1": 1,
+26593:            "CMT_FIFO_EE2A2_10": 1,
+26594:            "CMT_FIFO_EE2A2_11": 1,
+26595:            "CMT_FIFO_EE2A2_2": 1,
+26596:            "CMT_FIFO_EE2A2_3": 1,
+26597:            "CMT_FIFO_EE2A2_4": 1,
+26598:            "CMT_FIFO_EE2A2_5": 1,
+26599:            "CMT_FIFO_EE2A2_6": 1,
+26600:            "CMT_FIFO_EE2A2_7": 1,
+26601:            "CMT_FIFO_EE2A2_8": 1,
+26602:            "CMT_FIFO_EE2A2_9": 1,
+26603:            "CMT_FIFO_EE2A3_0": 1,
+26604:            "CMT_FIFO_EE2A3_1": 1,
+26605:            "CMT_FIFO_EE2A3_10": 1,
+26606:            "CMT_FIFO_EE2A3_11": 1,
+26607:            "CMT_FIFO_EE2A3_2": 1,
+26608:            "CMT_FIFO_EE2A3_3": 1,
+26609:            "CMT_FIFO_EE2A3_4": 1,
+26610:            "CMT_FIFO_EE2A3_5": 1,
+26611:            "CMT_FIFO_EE2A3_6": 1,
+26612:            "CMT_FIFO_EE2A3_7": 1,
+26613:            "CMT_FIFO_EE2A3_8": 1,
+26614:            "CMT_FIFO_EE2A3_9": 1,
+26615:            "CMT_FIFO_EE2BEG0_0": 1,
+26616:            "CMT_FIFO_EE2BEG0_1": 1,
+26617:            "CMT_FIFO_EE2BEG0_10": 1,
+26618:            "CMT_FIFO_EE2BEG0_11": 1,
+26619:            "CMT_FIFO_EE2BEG0_2": 1,
+26620:            "CMT_FIFO_EE2BEG0_3": 1,
+26621:            "CMT_FIFO_EE2BEG0_4": 1,
+
+--- kintex7 ---
+5355:            "BRKH_CMT_PHASEREF0": 6,
+5356:            "BRKH_CMT_PHASEREF1": 6,
+5357:            "BRKH_CMT_PHASEREF_BELOW0": 6,
+5358:            "BRKH_CMT_PHASEREF_BELOW1": 6,
+26566:        "CMT_FIFO_L": {
+26567:            "CMT_FIFO_EE2A0_0": 1,
+26568:            "CMT_FIFO_EE2A0_1": 1,
+26569:            "CMT_FIFO_EE2A0_10": 1,
+26570:            "CMT_FIFO_EE2A0_11": 1,
+26571:            "CMT_FIFO_EE2A0_2": 1,
+26572:            "CMT_FIFO_EE2A0_3": 1,
+26573:            "CMT_FIFO_EE2A0_4": 1,
+26574:            "CMT_FIFO_EE2A0_5": 1,
+26575:            "CMT_FIFO_EE2A0_6": 1,
+26576:            "CMT_FIFO_EE2A0_7": 1,
+26577:            "CMT_FIFO_EE2A0_8": 1,
+26578:            "CMT_FIFO_EE2A0_9": 1,
+26579:            "CMT_FIFO_EE2A1_0": 1,
+26580:            "CMT_FIFO_EE2A1_1": 1,
+26581:            "CMT_FIFO_EE2A1_10": 1,
+26582:            "CMT_FIFO_EE2A1_11": 1,
+26583:            "CMT_FIFO_EE2A1_2": 1,
+26584:            "CMT_FIFO_EE2A1_3": 1,
+26585:            "CMT_FIFO_EE2A1_4": 1,
+26586:            "CMT_FIFO_EE2A1_5": 1,
+26587:            "CMT_FIFO_EE2A1_6": 1,
+26588:            "CMT_FIFO_EE2A1_7": 1,
+26589:            "CMT_FIFO_EE2A1_8": 1,
+26590:            "CMT_FIFO_EE2A1_9": 1,
+26591:            "CMT_FIFO_EE2A2_0": 1,
+26592:            "CMT_FIFO_EE2A2_1": 1,
+26593:            "CMT_FIFO_EE2A2_10": 1,
+26594:            "CMT_FIFO_EE2A2_11": 1,
+26595:            "CMT_FIFO_EE2A2_2": 1,
+26596:            "CMT_FIFO_EE2A2_3": 1,
+26597:            "CMT_FIFO_EE2A2_4": 1,
+26598:            "CMT_FIFO_EE2A2_5": 1,
+26599:            "CMT_FIFO_EE2A2_6": 1,
+26600:            "CMT_FIFO_EE2A2_7": 1,
+26601:            "CMT_FIFO_EE2A2_8": 1,
+26602:            "CMT_FIFO_EE2A2_9": 1,
+26603:            "CMT_FIFO_EE2A3_0": 1,
+26604:            "CMT_FIFO_EE2A3_1": 1,
+26605:            "CMT_FIFO_EE2A3_10": 1,
+26606:            "CMT_FIFO_EE2A3_11": 1,
+26607:            "CMT_FIFO_EE2A3_2": 1,
+26608:            "CMT_FIFO_EE2A3_3": 1,
+26609:            "CMT_FIFO_EE2A3_4": 1,
+26610:            "CMT_FIFO_EE2A3_5": 1,
+26611:            "CMT_FIFO_EE2A3_6": 1,
+26612:            "CMT_FIFO_EE2A3_7": 1,
+26613:            "CMT_FIFO_EE2A3_8": 1,
+26614:            "CMT_FIFO_EE2A3_9": 1,
+26615:            "CMT_FIFO_EE2BEG0_0": 1,
+26616:            "CMT_FIFO_EE2BEG0_1": 1,
+26617:            "CMT_FIFO_EE2BEG0_10": 1,
+26618:            "CMT_FIFO_EE2BEG0_11": 1,
+26619:            "CMT_FIFO_EE2BEG0_2": 1,
+26620:            "CMT_FIFO_EE2BEG0_3": 1,
+26621:            "CMT_FIFO_EE2BEG0_4": 1,
+
+========== 6. CURRENT WORKTREE ==========
+ M himbaechel/uarch/xilinx/pack_io.cc
+?? build-arty-a100t/
+?? himbaechel/uarch/xilinx/pack_io.cc.before_beltype_inspection_20261103_195441
+?? himbaechel/uarch/xilinx/pack_io.cc.before_ologic_tbyte_fix_20261103_194949
+?? himbaechel/uarch/xilinx/pack_io.cc.before_site_name_filter_20261103_195745
+?? himbaechel/uarch/xilinx/pack_io.cc.before_tbyte_site_debug_20261103_195226
+
+========== AUDIT COMPLETE ==========

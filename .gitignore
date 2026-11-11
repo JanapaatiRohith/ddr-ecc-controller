@@ -1,9 +1,22 @@
-*.vcd
-*.fst
+# Vivado temporary and generated folders
+.Xil/
+*.cache/
+*.hw/
+*.runs/
+*.gen/
+*.sim/
+*.ip_user_files/
+*.jou
 *.log
-*.tmp
-*.swp
-*.o
-*.a
-*.so
-__pycache__/
+*.wdb
+*.vcd
+*.pb
+*.backup.*
+
+# Local editor / OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+build/
+*.vvp
