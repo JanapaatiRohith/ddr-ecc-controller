@@ -925,6 +925,7 @@ function integer clogb2 (input integer size);
   wire ecc_req_valid, ecc_req_ready, ecc_req_write;
   wire [C_S_AXI_ADDR_WIDTH-5:0] ecc_req_word_addr;
   wire [63:0] ecc_req_wdata;
+  wire [1:0] ecc_req_fault_mode;
 
   wire ecc_rsp_valid, ecc_rsp_ready;
   wire [63:0] ecc_rsp_rdata;
@@ -1570,6 +1571,7 @@ function integer clogb2 (input integer size);
      .req_write           (ecc_req_write),
      .req_word_addr       (ecc_req_word_addr),
      .req_wdata           (ecc_req_wdata),
+     .req_fault_mode      (ecc_req_fault_mode),
 
      .rsp_valid           (ecc_rsp_valid),
      .rsp_ready           (ecc_rsp_ready),
@@ -1595,6 +1597,7 @@ function integer clogb2 (input integer size);
      .req_write           (ecc_req_write),
      .req_word_addr       (ecc_req_word_addr),
      .req_wdata           (ecc_req_wdata),
+     .req_fault_mode      (ecc_req_fault_mode),
 
      .rsp_valid           (ecc_rsp_valid),
      .rsp_ready           (ecc_rsp_ready),

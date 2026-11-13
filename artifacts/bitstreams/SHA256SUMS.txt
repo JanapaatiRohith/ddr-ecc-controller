@@ -1,0 +1,1 @@
+1b28f333934bb1bbc28fdf2d8d71b04d429388bcc04f756a177db22d8cd97e52  ecc_arty_ddr_top_vivado_2025_2.bit

@@ -27,6 +27,7 @@ module ecc_mig_axi_master #(
     input  wire                         req_write,           // 1=write, 0=read
     input  wire [AXI_ADDR_WIDTH-5:0]     req_word_addr,       // 16-byte slot address
     input  wire [63:0]                  req_wdata,
+    input  wire [1:0]                   req_fault_mode,      // 00=clean, 01=single-bit, 10=double-bit write fault
     output reg                          rsp_valid,
     input  wire                         rsp_ready,
     output reg  [63:0]                  rsp_rdata,
@@ -91,6 +92,7 @@ module ecc_mig_axi_master #(
 
     reg [2:0] state;
     wire [71:0] encoded_codeword;
+    wire [71:0] write_codeword_with_fault;
     wire [63:0] decoded_data;
     wire        decoded_single_error;
     wire        decoded_double_error;
@@ -102,6 +104,15 @@ module ecc_mig_axi_master #(
         .data_in      (req_wdata),
         .codeword_out (encoded_codeword)
     );
+
+    // Fault injection occurs AFTER SECDED encoding and BEFORE the MIG write.
+    // Bit 2 is the first payload bit (Hamming position 3); bits 2 and 4
+    // are two payload bits. Thus the corrupted codeword is actually stored
+    // in physical DDR and later returned through the MIG read channel.
+    assign write_codeword_with_fault = encoded_codeword ^
+        ((req_fault_mode == 2'b01) ? 72'h4  :
+         (req_fault_mode == 2'b10) ? 72'h14 :
+                                    72'b0);
 
     secded_64_72_decoder u_ecc_decoder (
         .codeword_in  (m_axi_rdata[71:0]),
@@ -170,7 +181,7 @@ module ecc_mig_axi_master #(
                             m_axi_awqos   <= 4'b0000;
                             m_axi_awvalid <= 1'b1;
 
-                            m_axi_wdata   <= {56'b0, encoded_codeword};
+                            m_axi_wdata   <= {56'b0, write_codeword_with_fault};
                             m_axi_wstrb   <= 16'hffff;
                             m_axi_wlast   <= 1'b1;
                             m_axi_wvalid  <= 1'b1;

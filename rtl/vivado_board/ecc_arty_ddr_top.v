@@ -78,7 +78,15 @@ module ecc_arty_ddr_top (
 
     // Normal operation: LED0 = calibration complete, LED1 = ECC error.
     // Switch override mode: SW[2] selects SW[0] and SW[1] for LED testing.
-    assign LED[0] = SW[2] ? SW[0] : init_calib_complete;
+    // SW2=0: LED0 shows DDR calibration. SW2=1: LED0 shows completion
+    // of clean R/W + physical single-bit correction + double-bit detection.
+    // LED1 is always the sticky ECC/AXI self-test error indicator.
+    // SW2=0: integrated DDR calibration + ECC test status
+    // Green LED0 = calibration complete AND all ECC tests passed
+    // Red LED1   = sticky ECC/AXI self-test error
+    // SW2=1: manual truth-table mode (SW0 -> green, SW1 -> red)
+    assign LED[0] = SW[2] ? SW[0] :
+                    (init_calib_complete && ecc_test_done);
     assign LED[1] = SW[2] ? SW[1] : tg_compare_error;
 
 endmodule
